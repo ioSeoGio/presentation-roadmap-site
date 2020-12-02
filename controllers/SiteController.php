@@ -59,6 +59,14 @@ class SiteController extends \yii\web\Controller
 
         ErrorHelper::throwAllErrors($model);
     }
+    
+    /**
+     * Ajax endpoint
+     */
+    public function actionGetGlobalScore()
+    {
+        return Score::getGlobalScore();
+    }
 
     protected function findScoreModel($id)
     {
