@@ -94,6 +94,7 @@ $(".stars").mouseout(function(){
 $('body').on('click', '.star', function(){
 
     let num = +$(this).attr("data-id");
+    let destination = "крепость";
 
     star = num;
 
@@ -101,7 +102,8 @@ $('body').on('click', '.star', function(){
         type: 'GET',
         url: $(location).attr('href').slice(0, $(location).attr('href').lastIndexOf('/')) + '/score',
         data: {
-          mark: num
+          mark: num,
+          destination: "крепость",
         },
         success: function(res){
             $(`.star`).attr("src", $(`.star`).attr("src").replace("star-active", "star"))
