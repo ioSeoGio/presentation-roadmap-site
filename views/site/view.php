@@ -1,4 +1,5 @@
-<?php use yii\helpers\Url; ?>
+<?php 
+use yii\helpers\Url; ?>
 <div class="back">
     <a href="<?= Url::to(['roadmap']) ?>">Назад!</a>
 </div>

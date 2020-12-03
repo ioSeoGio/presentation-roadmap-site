@@ -88,12 +88,14 @@ $('.star').hover(function(){
 $('body').on('click', '.star', function(){
 
     let num = +$(this).attr("data-id");
+    let destination = "крепость";
 
     $.ajax({
         type: 'GET',
         url: $(location).attr('href').slice(0, $(location).attr('href').lastIndexOf('/')) + '/score',
         data: {
-          mark: num
+          mark: num,
+          destination: "крепость",
         },
         success: function(res){
             $('.star').css("cursor", "default");

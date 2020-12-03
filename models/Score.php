@@ -28,15 +28,40 @@ class Score extends \yii\db\ActiveRecord
         ];
     }
 
-    public static function getByIp(string $ip)
+    public static function getByIp(string $ip, string $destination)
     {
-    	return self::findOne(['ip' => $ip]);
+    	return self::findOne(['ip' => $ip, 'destination' => $destination]);
     }
 
-    public static function getGlobalScore($roundToSign = 1)
+    public static function getGlobalScoreAvg(string $destination, int $roundToSign = 1)
     {
-    	$globalScore = self::find()->average('score'); 
+    	$globalScore = self::find()
+            ->where(['destination' => $destination])
+            ->average('score'); 
     	
     	return round($globalScore, $roundToSign);
+    }
+
+
+    public static function getStatisticByDestination(string $destination)
+    {
+        return round(self::getDestinationSumScore($destination) / self::getAllSumScore() * 100, 1); 
+    }
+
+    public static function getDestinationSumScore(string $destination, int $roundToSign = 1)
+    {
+        $globalScore = self::find()
+            ->where(['destination' => $destination])
+            ->sum('score'); 
+        
+        return round($globalScore, $roundToSign);
+    }
+
+    public static function getAllSumScore(int $roundToSign = 1)
+    {
+        $globalScore = self::find()
+            ->sum('score'); 
+        
+        return round($globalScore, $roundToSign);
     }
 }

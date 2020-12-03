@@ -50,7 +50,19 @@ class SiteController extends \yii\web\Controller
 
     public function actionStatistic()
     {
-        return $this->render('statistic');
+        $first = "университет";
+        $second = "форт";
+        $third = "крепость";
+        $fourth = "музей";
+        $fifth = "хатынь";
+
+        return $this->render('statistic', [
+            'first' => Score::getStatisticByDestination($first),
+            'second' => Score::getStatisticByDestination($second),
+            'third' => Score::getStatisticByDestination($third),
+            'fourth' => Score::getStatisticByDestination($fourth),
+            'fifth' => Score::getStatisticByDestination($fifth),
+        ]);
     }
 
     public function actionAuthor()
@@ -60,8 +72,10 @@ class SiteController extends \yii\web\Controller
 
     public function actionView()
     {
+        $destination = 'крепость';
+
         $userIP = Yii::$app->request->userIP;
-        $model = Score::getByIp($userIP);
+        $model = Score::getByIp($userIP, $destination);
 
         $score = $model ? $model->score : 0;
 
@@ -70,25 +84,26 @@ class SiteController extends \yii\web\Controller
         ]);
     }
 
-    /**
+    /**++
      * Ajax endpoint
      */
-    public function actionScore(int $mark)
+    public function actionScore(int $mark, string $destination)
     {
         $userIP = Yii::$app->request->userIP;
-        $model = Score::getByIp($userIP);
+        $model = Score::getByIp($userIP, $destination);
 
         if ($model) {
             $model->score = $mark;
             if ($model->save())
-                return Score::getGlobalScore();
+                return Score::getGlobalScoreAvg($destination);
         } else {
             $model = new Score([
                 'ip' => $userIP,
                 'score' => $mark,
+                'destination' => $destination,
             ]);
             if ($model->save())
-                return Score::getGlobalScore();
+                return Score::getGlobalScoreAvg($destination);
         }
 
         ErrorHelper::throwAllErrors($model);
@@ -97,9 +112,9 @@ class SiteController extends \yii\web\Controller
     /**
      * Ajax endpoint
      */
-    public function actionGetGlobalScore()
+    public function actionGetGlobalScore(string $destination)
     {
-        return Score::getGlobalScore();
+        return Score::getGlobalScoreAvg($destination);
     }
 
     protected function findScoreModel($id)
