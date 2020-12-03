@@ -77,6 +77,7 @@ $('.star').hover(function(){
             $(`.star:eq(${i})`).attr("src", $(`.star:eq(${i})`).attr("src").replace("star", "star-active"))
     }
 
+
 }, function(){
     $('.star').each((idx, item) => {
         $(item).attr("src", $(this).attr("src").replace("star-active", "star") )
