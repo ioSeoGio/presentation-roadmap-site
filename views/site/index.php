@@ -1,53 +1,30 @@
-<?php
+<?php use yii\helpers\Url; ?>
 
-/* @var $this yii\web\View */
-
-$this->title = 'My Yii Application';
-?>
-<div class="site-index">
-
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
+<article>
+    <div class="block">
+        <div class="info">
+            <h1>Начать увлекательную экскурсию!</h1>
+            <span>Перед вами появиться карта, которая позволит двигаться по указанным пунктам и узнавать новое!</span>
+            <a href="<?= Url::to(['roadmap']) ?>">Вперед!</a>
         </div>
-
+        <img src="<?= Yii::getAlias('@web/img/world.png') ?>" class="info-image">
     </div>
-</div>
+    <div class="block block-reverse color-2">
+        <div class="info">
+            <h1>Посмотреть статистику!</h1>
+            <span>Тут вы можете посмотреть результаты опроса пользователей системы!</span>
+            <a href="<?= Url::to(['statistic']) ?>">Вперед!</a>
+        </div>
+        <img src="<?= Yii::getAlias('@web/img/statistic.png') ?>" class="info-image">
+    </div>
+    <div class="block color-3">
+        <div class="info">
+            <h1>Информация об авторе!</h1>
+            <span>Немного о себе и успехах своего универсистета!</span>
+            <a href="<?= Url::to(['author']) ?>">Вперед!</a>
+        </div>
+        <img src="<?= Yii::getAlias('@web/img/books.png') ?>" class="info-image">
+    </div>
+</article>
+
+<?php $this->registerCssFile('@web/css/index.css'); ?>

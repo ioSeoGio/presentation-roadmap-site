@@ -1,0 +1,51 @@
+.info{
+    height: 80vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info p{
+    color: #666;
+    font-family: 'New-Oswald';
+    font-size: 2.3em;
+}
+
+.statistic{
+    min-height: 30px;
+    padding: 10px;
+    height: 40%;
+    box-shadow: -3px -3px 7px #fff, 3px 3px 7px #C0C9D2;
+    width: 70%;
+}
+
+.item{
+    min-height: 40px;
+    margin: 6px 0;
+}
+
+.item-length{
+    height: 3px;
+    background-color: #666;
+    border-radius: 2px;
+}
+
+.item-length-1{
+    width: 30%;
+}
+
+.item-length-2{
+    width: 40%;
+}
+.item-length-3{
+    width: 50%;
+}
+.item-length-4{
+    width: 10%;
+}
+.item-length-5{
+    width: 80%;
+}

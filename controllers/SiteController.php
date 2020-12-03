@@ -36,6 +36,34 @@ class SiteController extends \yii\web\Controller
         return $this->render('index');
     }
 
+    public function actionTest()
+    {
+        if(Yii::$app->request->get())
+        {
+            return true;
+        }
+    }
+
+    public function actionRoadmap()
+    {
+        return $this->render('roadmap');
+    }
+
+    public function actionStatistic()
+    {
+        return $this->render('statistic');
+    }
+
+    public function actionAuthor()
+    {
+        return $this->render('author');
+    }
+
+    public function actionView()
+    {
+        return $this->render('view');
+    }
+
     /**
      * Ajax endpoint
      */
@@ -47,19 +75,19 @@ class SiteController extends \yii\web\Controller
         if ($model) {
             $model->score = $mark;
             if ($model->save())
-                return Score::getGlobalScore();    
+                return Score::getGlobalScore();
         } else {
             $model = new Score([
                 'ip' => $userIP,
                 'score' => $mark,
             ]);
             if ($model->save())
-                return Score::getGlobalScore();  
+                return Score::getGlobalScore();
         }
 
         ErrorHelper::throwAllErrors($model);
     }
-    
+
     /**
      * Ajax endpoint
      */
