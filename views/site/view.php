@@ -39,7 +39,6 @@
                     <img src="<?= Yii::getAlias('@web/img/star.png') ?>" alt="star" class="star" data-id="3">
                     <img src="<?= Yii::getAlias('@web/img/star.png') ?>" alt="star" class="star" data-id="4">
                     <img src="<?= Yii::getAlias('@web/img/star.png') ?>" alt="star" class="star" data-id="5">
-                    <img src="<?= Yii::getAlias('@web/img/return.png') ?>" alt="return" class="return-vote">
                 </div>
             </div>
 

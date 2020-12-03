@@ -1,5 +1,5 @@
 .info{
-    height: 80vh;
+    min-height: 80vh;
     width: 100%;
 
     display: flex;
@@ -27,9 +27,15 @@
     margin: 6px 0;
 }
 
+.item span{
+    font-family: 'Montserrat-Bold';
+    margin: 4px 0;
+}
+
 .item-length{
+    margin: 5px 0;
     height: 3px;
-    background-color: #666;
+    background-color: #9b9b9b;
     border-radius: 2px;
 }
 
