@@ -69,22 +69,18 @@ $('body').on('click', '.nav', function(){
 });
 
 $('.star').hover(function(){
-    if(!+$(".vote").attr("data-active")){
-        let num = +$(this).attr("data-id");
+    let num = +$(this).attr("data-id");
 
-        for(let i = 0; i < num; i++)
-        {
-            if(!$(`.star:eq(${i})`).attr("src").includes("star-active"))
-                $(`.star:eq(${i})`).attr("src", $(`.star:eq(${i})`).attr("src").replace("star", "star-active"))
-        }
+    for(let i = 0; i < num; i++)
+    {
+        if(!$(`.star:eq(${i})`).attr("src").includes("star-active"))
+            $(`.star:eq(${i})`).attr("src", $(`.star:eq(${i})`).attr("src").replace("star", "star-active"))
     }
 
 }, function(){
-    if(!+$(".vote").attr("data-active")){
-        $('.star').each((idx, item) => {
-            $(item).attr("src", $(this).attr("src").replace("star-active", "star") )
-        })
-    }
+    $('.star').each((idx, item) => {
+        $(item).attr("src", $(this).attr("src").replace("star-active", "star") )
+    })
 })
 
 
@@ -94,16 +90,13 @@ $('body').on('click', '.star', function(){
 
     $.ajax({
         type: 'GET',
-        url: $(location).attr('href').slice(0, $(location).attr('href').lastIndexOf('/')) + '/test',
-        // data: {
-        //   id: id
-        // },
+        url: $(location).attr('href').slice(0, $(location).attr('href').lastIndexOf('/')) + '/score',
+        data: {
+          mark: num
+        },
         success: function(res){
             $('.star').css("cursor", "default");
-
             $(".vote").attr("data-active", "1");
-
-            $(".return-vote").show();
         },
         error: function(){
             alert("error");

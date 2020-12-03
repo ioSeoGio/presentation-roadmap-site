@@ -38,8 +38,7 @@ class SiteController extends \yii\web\Controller
 
     public function actionTest()
     {
-        if(Yii::$app->request->get())
-        {
+        if (Yii::$app->request->get()) {
             return true;
         }
     }
@@ -61,7 +60,14 @@ class SiteController extends \yii\web\Controller
 
     public function actionView()
     {
-        return $this->render('view');
+        $userIP = Yii::$app->request->userIP;
+        $model = Score::getByIp($userIP);
+
+        $score = $model ? $model->score : 0;
+
+        return $this->render('view', [
+            'score' => $score,
+        ]);
     }
 
     /**

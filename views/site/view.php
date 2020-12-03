@@ -32,14 +32,13 @@
 
             <div class="vote" data-active="0">
                 <p>Хотелось бы Вам посетить данное место?</p>
-                <input type="hidden" name="vote" value="0" id="vote">
+                <input type="hidden" name="vote" value="<?= $score ?>" id="vote">
                 <div class="stars">
                     <img src="<?= Yii::getAlias('@web/img/star.png') ?>" alt="star" class="star" data-id="1">
                     <img src="<?= Yii::getAlias('@web/img/star.png') ?>" alt="star" class="star" data-id="2">
                     <img src="<?= Yii::getAlias('@web/img/star.png') ?>" alt="star" class="star" data-id="3">
                     <img src="<?= Yii::getAlias('@web/img/star.png') ?>" alt="star" class="star" data-id="4">
                     <img src="<?= Yii::getAlias('@web/img/star.png') ?>" alt="star" class="star" data-id="5">
-                    <img src="<?= Yii::getAlias('@web/img/return.png') ?>" alt="return" class="return-vote">
                 </div>
             </div>
 
