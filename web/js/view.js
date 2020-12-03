@@ -3,12 +3,6 @@ window.onload = function(){
         let vote = +$("#vote").val();
         if(vote)
         {
-            $('.star').css("cursor", "default");
-
-            $(".vote").attr("data-active", "1");
-
-            $(".return-vote").show();
-
             for(let i = 0; i < vote; i++)
             {
                 if(!$(`.star:eq(${i})`).attr("src").includes("star-active"))
@@ -19,6 +13,7 @@ window.onload = function(){
 }
 
 var counter = 1;
+var star = 0;
 
 $('body').on('click', '.nav', function(){
 
@@ -81,13 +76,26 @@ $('.star').hover(function(){
 }, function(){
     $('.star').each((idx, item) => {
         $(item).attr("src", $(this).attr("src").replace("star-active", "star") )
-    })
-})
+    });
+});
+
+$(".stars").mouseout(function(){
+    if(star)
+    {
+        for(let i = 0; i < star; i++)
+        {
+            if(!$(`.star:eq(${i})`).attr("src").includes("star-active"))
+                $(`.star:eq(${i})`).attr("src", $(`.star:eq(${i})`).attr("src").replace("star", "star-active"))
+        }
+    }
+});
 
 
 $('body').on('click', '.star', function(){
 
     let num = +$(this).attr("data-id");
+
+    star = num;
 
     $.ajax({
         type: 'GET',
@@ -96,8 +104,13 @@ $('body').on('click', '.star', function(){
           mark: num
         },
         success: function(res){
-            $('.star').css("cursor", "default");
-            $(".vote").attr("data-active", "1");
+            $(`.star`).attr("src", $(`.star`).attr("src").replace("star-active", "star"))
+
+            for(let i = 0; i < star; i++)
+            {
+                if(!$(`.star:eq(${i})`).attr("src").includes("star-active"))
+                    $(`.star:eq(${i})`).attr("src", $(`.star:eq(${i})`).attr("src").replace("star", "star-active"))
+            }
         },
         error: function(){
             alert("error");

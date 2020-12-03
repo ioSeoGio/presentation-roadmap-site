@@ -216,7 +216,6 @@ article .road{
 }
 .road-item-action .point img{
     height: 25px;
-    margin-right: 7px;
     animation-duration: 1s;
     animation-name: slidein;
     animation-iteration-count: infinite;
