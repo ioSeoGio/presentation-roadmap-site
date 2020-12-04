@@ -70,18 +70,45 @@ class SiteController extends \yii\web\Controller
         return $this->render('author');
     }
 
-    public function actionView()
+    public function actionView($destination)
     {
-        $destination = 'крепость';
+        switch ($destination) {
+            case 'fortress':
+                $destination = 'крепость';
+                $page = 'fortress';
+                break;
+            case 'fort':
+                $destination = 'форт';
+                $page = 'fort';
+                break;
+            case 'university':
+                $destination = 'университет';
+                $page = 'university';
+                break;
+            case 'museum':
+                $destination = 'музей';
+                $page = 'museum';
+                break;
+            case 'khatyn':
+                $destination = 'хатынь';
+                $page = 'khatyn';
+                break;
+
+            default:
+                $destination = 'крепость';
+                $page = 'fortress';
+                break;
+        }
 
         $userIP = Yii::$app->request->userIP;
         $model = Score::getByIp($userIP, $destination);
 
         $score = $model ? $model->score : 0;
 
-        return $this->render('view', [
+        return $this->render($page, [
             'score' => $score,
         ]);
+
     }
 
     /**++

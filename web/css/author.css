@@ -39,6 +39,22 @@
     justify-content: flex-start !important;
 }
 
+.go-back{
+    padding: 2px 5px;
+    color: #1dcb6f;
+    border: 2px solid #1dcb6f;
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-family: 'Montserrat-Medium';
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.go-back:hover{
+    background-color: #1dcb6f;
+    color: #E9EDF0;
+}
+
 
 @media (max-width: 830px) {
     .author-logo img{
@@ -59,6 +75,7 @@
         padding: 10px;
     }
 }
+
 
 @media (max-width: 550px) {
 

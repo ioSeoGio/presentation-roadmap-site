@@ -93,18 +93,17 @@ $(".stars").mouseout(function(){
 
 $('body').on('click', '.star', function(){
 
-    let num = +$(this).attr("data-id");
-    let destination = "крепость";
+    let mark = +$(this).attr("data-id");
+    let destination = $("#vote").attr("data-destination");
 
-    star = num;
+    console.log({mark, destination})
+
+    star = mark;
 
     $.ajax({
         type: 'GET',
         url: $(location).attr('href').slice(0, $(location).attr('href').lastIndexOf('/')) + '/score',
-        data: {
-          mark: num,
-          destination: "крепость",
-        },
+        data: { mark, destination },
         success: function(res){
             $(`.star`).attr("src", $(`.star`).attr("src").replace("star-active", "star"))
 
@@ -118,41 +117,5 @@ $('body').on('click', '.star', function(){
             alert("error");
         }
     });
-
-});
-
-
-$('body').on('click', '.return-vote', function(){
-
-    $('.star').css("cursor", "pointer");
-
-    $(".vote").attr("data-active", "0");
-
-    $(this).hide();
-
-    for(let i = 0; i < $(`.star`).length; i++)
-    {
-        if($(`.star:eq(${i})`).attr("src").includes("star-active"))
-            $(`.star:eq(${i})`).attr("src", $(`.star:eq(${i})`).attr("src").replace("star-active", "star"))
-    }
-
-
-    // $.ajax({
-    //     type: 'GET',
-    //     url: $(location).attr('href').slice(0, $(location).attr('href').lastIndexOf('/')) + '/test',
-    //     // data: {
-    //     //   id: id
-    //     // },
-    //     success: function(res){
-    //         $('.star').css("cursor", "default");
-    //
-    //         $(".vote").attr("data-active", "1");
-    //
-    //         $(".return-vote").show();
-    //     },
-    //     error: function(){
-    //         alert("error");
-    //     }
-    // });
 
 });

@@ -1,7 +1,10 @@
 <?php use yii\helpers\Url; ?>
 
 <div class="info">
-    <p>По итогам опроса:</p>
+    <p class="vioce">По итогам голосования:</p>
+    <div class="back">
+        <a href="<?= Url::to(['index']) ?>">Назад!</a>
+    </div>
     <div class="statistic">
         <div class="item">
             <span>Университет (<?= $first ?>%)</span>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 use yii\helpers\Url; ?>
 <div class="back">
     <a href="<?= Url::to(['roadmap']) ?>">Назад!</a>
@@ -6,7 +6,7 @@ use yii\helpers\Url; ?>
 
 <article>
             <div class="title-block">
-                <p>Брестская крепость-герой!</p>
+                <p>Музей ВОВ</p>
             </div>
 
 
@@ -33,7 +33,7 @@ use yii\helpers\Url; ?>
 
             <div class="vote" data-active="0">
                 <p>Хотелось бы Вам посетить данное место?</p>
-                <input type="hidden" name="vote" value="<?= $score ?>" id="vote">
+                <input type="hidden" name="vote" value="<?= $score ?>" id="vote" data-destination="музей">
                 <div class="stars">
                     <img src="<?= Yii::getAlias('@web/img/star.png') ?>" alt="star" class="star" data-id="1">
                     <img src="<?= Yii::getAlias('@web/img/star.png') ?>" alt="star" class="star" data-id="2">

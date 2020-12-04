@@ -118,12 +118,13 @@ footer p{
     padding: 4px 15px;
     transition: 0.3s;
     font-family: 'Montserrat-Bold';
-    color: #444;
-    font-size: 1.2em;
+    color: #6785e1;
+    font-size: 1.1em;
     border-radius: 5px;
     box-shadow: -3px -3px 7px #fff, 3px 3px 7px #C0C9D2;
+    user-select: none;
 }
 
 .back a:hover{
-    background-color: #cccccc91;
+    background-color: #d2ddff;
 }

@@ -17,7 +17,7 @@
                 <p>
                     Старый корпус БрГУ
                 </p>
-                <a href="<?= Url::to(['view']) ?>">Перейти!</a>
+                <a href="<?= Url::to(['view', 'destination' => 'university']) ?>">Перейти!</a>
             </div>
         </div>
         <div class="road-item special-road-item-2 special-road-color-2">
@@ -29,7 +29,7 @@
                 <p>
                     5 Форт
                 </p>
-                <a href="<?= Url::to(['view']) ?>">Перейти!</a>
+                <a href="<?= Url::to(['view', 'destination' => 'fort']) ?>">Перейти!</a>
             </div>
         </div>
     </div>
@@ -44,7 +44,7 @@
                 <p>
                     Брестская крепость
                 </p>
-                <a href="<?= Url::to(['view']) ?>">Перейти!</a>
+                <a href="<?= Url::to(['view', 'destination' => 'fortress']) ?>">Перейти!</a>
             </div>
         </div>
         <div class="road-item special-road-item-2 special-road-color-2">
@@ -56,7 +56,7 @@
                 <p>
                     Минск (музей ВОВ)
                 </p>
-                <a href="<?= Url::to(['view']) ?>">Перейти!</a>
+                <a href="<?= Url::to(['view', 'destination' => 'museum']) ?>">Перейти!</a>
             </div>
         </div>
     </div>
@@ -71,7 +71,7 @@
                 <p>
                     Хатынь
                 </p>
-                <a href="<?= Url::to(['view']) ?>">Перейти!</a>
+                <a href="<?= Url::to(['view', 'destination' => 'khatyn']) ?>">Перейти!</a>
             </div>
         </div>
     </div>
