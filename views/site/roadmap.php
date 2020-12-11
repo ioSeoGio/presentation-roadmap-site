@@ -33,6 +33,20 @@
             </div>
         </div>
     </div>
+    <div class="road road-special-2">
+        <div class="road-item special-road-item-1 special-road-color-1">
+            <div class="road-item-action">
+                <div class="point">
+                    <img src="<?= Yii::getAlias('@web/img/point.png') ?>" alt="point">
+                </div>
+                <img src="<?= Yii::getAlias('@web/img/monument.png') ?>" alt="monument">
+                <p>
+                    Курган Славы
+                </p>
+                <a href="<?= Url::to(['view', 'destination' => 'glory']) ?>">Перейти!</a>
+            </div>
+        </div>
+    </div>
 
     <div class="road road-special">
         <div class="road-item special-road-item-1 special-road-color-1">
@@ -67,7 +81,7 @@
                 <div class="point">
                     <img src="<?= Yii::getAlias('@web/img/point.png') ?>" alt="point">
                 </div>
-                <img src="<?= Yii::getAlias('@web/img/monument.png') ?>" alt="">
+                <img src="<?= Yii::getAlias('@web/img/khatyn.png') ?>" alt="khatyn">
                 <p>
                     Хатынь
                 </p>

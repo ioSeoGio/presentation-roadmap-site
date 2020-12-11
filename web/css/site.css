@@ -128,3 +128,14 @@ footer p{
 .back a:hover{
     background-color: #d2ddff;
 }
+
+
+.links{
+    display: flex;
+    flex-direction: column;
+}
+
+.links a{
+    font-family: "Montserrat-Medium";
+    margin-bottom: 3px;
+}

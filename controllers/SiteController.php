@@ -55,6 +55,7 @@ class SiteController extends \yii\web\Controller
         $third = "крепость";
         $fourth = "музей";
         $fifth = "хатынь";
+        $sixth = "курган";
 
         return $this->render('statistic', [
             'first' => Score::getStatisticByDestination($first),
@@ -62,6 +63,7 @@ class SiteController extends \yii\web\Controller
             'third' => Score::getStatisticByDestination($third),
             'fourth' => Score::getStatisticByDestination($fourth),
             'fifth' => Score::getStatisticByDestination($fifth),
+            'sixth' => Score::getStatisticByDestination($sixth),
         ]);
     }
 
@@ -92,6 +94,10 @@ class SiteController extends \yii\web\Controller
             case 'khatyn':
                 $destination = 'хатынь';
                 $page = 'khatyn';
+                break;
+            case 'glory':
+                $destination = 'курган';
+                $page = 'glory';
                 break;
 
             default:

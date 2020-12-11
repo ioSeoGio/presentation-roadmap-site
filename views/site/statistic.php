@@ -26,6 +26,10 @@
             <span>Хатынь (<?= $fifth ?>%)</span>
             <div class="item-length item-length-2" data-length="<?= $fifth ?>"></div>
         </div>
+        <div class="item">
+            <span>Курган славы (<?= $sixth ?>%)</span>
+            <div class="item-length item-length-2" data-length="<?= $sixth ?>"></div>
+        </div>
     </div>
 </div>
 
