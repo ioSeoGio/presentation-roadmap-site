@@ -2,8 +2,8 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=roadmapdb',
+    'dsn' => 'mysql:host=db;dbname=roadmapdb',
     'username' => 'root',
-    'password' => '',
+    'password' => 'as53fwKejJDQ',
     'charset' => 'utf8',
 ];
